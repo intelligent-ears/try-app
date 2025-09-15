@@ -1,0 +1,32 @@
+{
+  "extends": "./node_modules/expo/tsconfig.base.json",
+  "compilerOptions": {
+    "strict": true,
+    "jsx": "react-native",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    // Limit automatically included type packages to avoid unresolved dev-only deps
+    "types": [
+      "react",
+      "react-native",
+      "node"
+    ],
+    // Speeds up and avoids noise from third-party libs
+    "skipLibCheck": true
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts",
+    "nativewind-env.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/__tests__/**",
+    "**/dist/**",
+    "**/build/**"
+  ]
+}
